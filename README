@@ -1,0 +1,3 @@
+Simple example which shows how to load 3d object and make them rotate in different way with kivy framework.
+This example contains objloader module which may be used for loading 3d object from Wave format *.obj files to Kivy applications. It's extended version which allows you to load several object(see in code how to set object separator) and load also material information from *.mtl file which may be used while rendering.
+
