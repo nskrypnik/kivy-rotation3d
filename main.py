@@ -74,19 +74,28 @@ class Renderer(Widget):
         
         # Then draw other elements and totate it in different axis
         pyramid = self.scene.objects['Pyramid']
-        self.pyramid_rot = SingleRotate(0, (0, 0, 1), self.canvas)
+        #self.pyramid_rot = SingleRotate(0, (0, 0, 1), self.canvas)
+        PushMatrix()
+        self.pyramid_rot = Rotate(0, 0, 0, 1)
         _draw_element(pyramid)
-        self.pyramid_rot.clear()
+        PopMatrix()
+        #self.pyramid_rot.clear()
         
         box = self.scene.objects['Box']
-        self.box_rot = SingleRotate(0, (0, 1, 0), self.canvas)
+        #self.box_rot = SingleRotate(0, (0, 1, 0), self.canvas)
+        PushMatrix()
+        self.box_rot = Rotate(0, 0, 1, 0)
         _draw_element(box)
-        self.box_rot.clear()
+        PopMatrix()
+        #self.box_rot.clear()
 
         cylinder = self.scene.objects['Cylinder']
-        self.cylinder_rot = SingleRotate(0, (1, 0, 0), self.canvas)
+        #self.cylinder_rot = SingleRotate(0, (1, 0, 0), self.canvas)
+        PushMatrix()
+        self.cylinder_rot = Rotate(0, 1, 0, 0)
         _draw_element(cylinder)
-        self.cylinder_rot.clear()
+        PopMatrix()
+        #self.cylinder_rot.clear()
     
 
     def update_scene(self, *largs):
